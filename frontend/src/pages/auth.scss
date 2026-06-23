@@ -1,0 +1,33 @@
+@use "../styles/abstracts/variables" as *;
+
+.auth-page {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: min(100%, 440px);
+
+  > p {
+    margin-top: 10px;
+    color: $text-muted;
+  }
+
+  form {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  a {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+.auth-error {
+  color: $danger-color !important;
+  font-weight: 600;
+}

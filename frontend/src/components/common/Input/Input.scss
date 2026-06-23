@@ -1,0 +1,25 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.input-field {
+  display: grid;
+  gap: 7px;
+  color: $text-color;
+  font-weight: 600;
+
+  input {
+    width: 100%;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    padding: 11px 12px;
+    outline: none;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.12);
+    }
+  }
+
+  small {
+    color: $danger-color;
+  }
+}

@@ -1,0 +1,112 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.question-form-card {
+  margin-bottom: 26px;
+  padding: 24px;
+  border: 1px solid $border-color;
+  border-radius: $radius-lg;
+  background: $white;
+  box-shadow: $shadow-card;
+}
+
+.form-heading {
+  margin-bottom: 22px;
+
+  h3 {
+    color: $secondary-color;
+    font-size: 22px;
+  }
+
+  p {
+    margin-top: 6px;
+    color: #64748b;
+  }
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.admin-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  > span {
+    color: #334155;
+    font-weight: 700;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: $radius-md;
+    padding: 12px 14px;
+    background: $white;
+    outline: none;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+  }
+
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  small {
+    color: #64748b;
+  }
+}
+
+.question-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  button {
+    border: 0;
+    border-radius: $radius-md;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+}
+
+.cancel-btn {
+  color: #334155;
+  background: #f1f5f9;
+}
+
+.save-btn {
+  color: $white;
+  background: $primary-color;
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
+}
+
+.question-form-error {
+  color: $danger-color;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+}

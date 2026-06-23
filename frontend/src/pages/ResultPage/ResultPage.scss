@@ -1,0 +1,71 @@
+@use "../../styles/abstracts/variables" as *;
+
+.result-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background:
+    radial-gradient(circle at top, rgba(22, 163, 74, 0.16), transparent 30%),
+    linear-gradient(135deg, #f0fdf4, #f8fafc);
+}
+
+.result-card {
+  width: min(100%, 760px);
+  padding: 36px;
+  border-radius: 28px;
+  background: $white;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+  text-align: center;
+
+  h1 { margin: 14px 0 8px; color: $secondary-color; font-size: 34px; }
+  > button { margin-top: 20px; border: 0; border-radius: 14px; padding: 13px 18px; color: $white; background: $primary-color; font-weight: 800; cursor: pointer; }
+}
+
+.result-badge { display: inline-block; border-radius: 999px; padding: 9px 14px; color: #15803d; background: #dcfce7; font-weight: 900; }
+.result-quiz-title { color: #64748b; font-weight: 700; }
+
+.score-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 190px;
+  height: 190px;
+  margin: 30px auto;
+  border-radius: 50%;
+  color: $white;
+  background: linear-gradient(135deg, $success-color, #22c55e);
+  box-shadow: 0 18px 38px rgba(22, 163, 74, 0.28);
+
+  strong { font-size: 46px; }
+  span { font-weight: 800; }
+}
+
+.result-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+
+  div { padding: 18px; border: 1px solid $border-color; border-radius: $radius-lg; background: #f8fafc; }
+  span { display: block; margin-bottom: 8px; color: #64748b; font-weight: 700; }
+  strong { color: $secondary-color; overflow-wrap: anywhere; }
+}
+
+.timeout-message { margin-bottom: 20px; padding: 14px; border-radius: 16px; color: #b91c1c; background: #fee2e2; font-weight: 800; }
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  button { border: 0; border-radius: 15px; padding: 14px 20px; color: $white; background: $primary-color; font-weight: 900; cursor: pointer; }
+  button.secondary { color: #334155; background: #f1f5f9; }
+}
+
+@media (max-width: 700px) {
+  .result-card { padding: 26px 18px; }
+  .result-info-grid { grid-template-columns: 1fr; }
+  .result-actions { flex-direction: column; }
+}

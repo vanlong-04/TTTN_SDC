@@ -1,0 +1,16 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.admin-dashboard-page { width: 100%; }
+.dashboard-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px; }
+.dashboard-stat-card { min-height: 145px; }
+.dashboard-section-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 22px; }
+.score-stat-panel, .recent-submission-panel { padding: 26px; h2 { margin: 0 0 20px; color: $secondary-color; letter-spacing: -.5px; } }
+.score-stat-list { display: flex; flex-direction: column; gap: 14px; div { padding: 18px; } span { color: $text-muted; font-weight: 850; } strong { display: block; margin-top: 8px; color: $secondary-color; font-size: 28px; letter-spacing: -.5px; } }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; h2 { margin: 0; } button { padding: 10px 13px; border: 0; border-radius: 13px; color: $primary-color; background: $primary-light; font-weight: 950; &:hover { background: #e0e7ff; } } }
+.recent-list { display: flex; flex-direction: column; gap: 12px; }
+.recent-item { display: flex; justify-content: space-between; gap: 16px; width: 100%; padding: 16px; text-align: left; strong { display: block; margin-bottom: 5px; color: $secondary-color; } em { display: block; margin-top: 5px; color: $text-muted; font-style: normal; font-weight: 750; } }
+.recent-right { text-align: right; strong { display: inline-block; padding: 7px 10px; border-radius: 999px; color: $primary-color; background: $primary-light; } em { color: $text-soft; font-size: 12px; } }
+.empty-recent { color: $text-muted; font-weight: 800; }
+.admin-dashboard-state { padding: 34px; text-align: center; &--error { color: #be123c; background: #fff1f2; } }
+
+@media (max-width: 1050px) { .dashboard-card-grid, .dashboard-section-grid { grid-template-columns: 1fr; } }

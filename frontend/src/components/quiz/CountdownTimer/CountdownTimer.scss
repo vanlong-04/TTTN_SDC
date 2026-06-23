@@ -1,0 +1,38 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.countdown-timer {
+  min-width: 170px;
+  padding: 14px 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: $radius-lg;
+  color: #1d4ed8;
+  background: #eff6ff;
+  text-align: center;
+
+  .timer-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  strong {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  &.danger {
+    border-color: #fecaca;
+    color: $danger-color;
+    background: #fee2e2;
+    animation: pulse-timer 1s infinite;
+  }
+}
+
+@keyframes pulse-timer {
+  50% { transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countdown-timer.danger { animation: none; }
+}

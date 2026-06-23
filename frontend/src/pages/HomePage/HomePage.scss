@@ -1,0 +1,61 @@
+@use "../../styles/abstracts/variables" as *;
+
+.home-page { min-height: 100vh; background: $bg-gradient; }
+.home-hero {
+  display: grid; grid-template-columns: 1.18fr .82fr; gap: 48px; align-items: center;
+  max-width: 1180px; margin: 0 auto; padding: 78px 20px 58px;
+}
+.home-hero__content {
+  h1 { max-width: 780px; margin: 18px 0; color: $secondary-color; font-size: clamp(42px, 5vw, 58px); line-height: 1.05; letter-spacing: -2px; }
+  p { max-width: 720px; color: $text-muted; font-size: 18px; line-height: 1.8; }
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px;
+  border: 1px solid rgba(79, 70, 229, .16); border-radius: 999px;
+  color: $primary-color; background: rgba(238, 242, 255, .9); box-shadow: $shadow-sm; font-weight: 950;
+  &::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: $accent-color; box-shadow: 0 0 0 5px rgba(6, 182, 212, .13); }
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.primary-action, .secondary-action { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border-radius: 16px; font-weight: 950; transition: .2s; }
+.primary-action { color: #fff; background: $gradient-primary; box-shadow: 0 16px 34px rgba(79, 70, 229, .26); &:hover { transform: translateY(-2px); box-shadow: 0 22px 40px rgba(79, 70, 229, .32); } }
+.secondary-action { border: 1px solid rgba(79, 70, 229, .18); color: $primary-color; background: rgba(255, 255, 255, .86); box-shadow: $shadow-sm; &:hover { transform: translateY(-1px); background: $primary-light; } }
+
+.home-hero__panel { position: relative; min-height: 440px; }
+.mock-card {
+  position: absolute; width: 330px; padding: 24px; border: 1px solid rgba(226, 232, 240, .9); border-radius: 28px;
+  background: rgba(255, 255, 255, .88); box-shadow: $shadow-large; backdrop-filter: blur(18px); transition: .2s;
+  &:hover { transform: translateY(-4px); }
+  span { display: inline-block; margin-bottom: 14px; padding: 7px 11px; border-radius: 999px; color: $primary-color; background: $primary-light; font-size: 13px; font-weight: 950; }
+  strong { display: block; margin-bottom: 8px; color: $secondary-color; font-size: 25px; line-height: 1.2; letter-spacing: -.5px; }
+  small { color: $text-muted; font-weight: 800; }
+  &.top { top: 0; right: 28px; } &.middle { top: 150px; left: 0; } &.bottom { right: 0; bottom: 0; span { color: $success-color; background: #ecfdf5; } }
+}
+.feature-section, .tech-section { max-width: 1180px; margin: 0 auto; padding: 54px 20px; }
+.section-heading {
+  margin-bottom: 30px; &.center { text-align: center; }
+  > span { display: inline-block; margin-bottom: 9px; color: $primary-color; font-weight: 950; }
+  h2 { margin: 0; color: $secondary-color; font-size: 38px; letter-spacing: -1px; }
+}
+.feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.feature-card {
+  padding: 26px; border: 1px solid rgba(226, 232, 240, .95); border-radius: 26px; background: rgba(255, 255, 255, .9); box-shadow: $shadow-card; transition: .2s;
+  &:hover { transform: translateY(-4px); box-shadow: $shadow-large; }
+  h3 { margin: 18px 0 9px; color: $secondary-color; font-size: 20px; }
+  p { margin: 0; color: $text-muted; line-height: 1.7; }
+}
+.feature-icon { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 18px; color: #fff; background: $gradient-primary; box-shadow: 0 12px 24px rgba(79, 70, 229, .22); font-size: 22px; font-weight: 950; }
+.tech-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.tech-card { padding: 22px; border: 1px solid rgba(226, 232, 240, .95); border-radius: 20px; color: $secondary-color; background: rgba(255, 255, 255, .9); box-shadow: $shadow-card; text-align: center; font-weight: 950; transition: .2s; &:hover { transform: translateY(-3px); color: #fff; background: $gradient-primary; box-shadow: 0 18px 36px rgba(79, 70, 229, .24); } }
+
+@media (max-width: 1050px) {
+  .home-hero, .feature-grid, .tech-grid { grid-template-columns: 1fr; }
+  .home-hero__content h1 { font-size: 42px; }
+  .home-hero__panel { display: grid; gap: 16px; min-height: auto; }
+  .mock-card { position: static; width: 100%; }
+}
+@media (max-width: 620px) {
+  .home-hero { padding-top: 46px; }
+  .home-hero__content h1 { font-size: 34px; letter-spacing: -1px; }
+  .section-heading h2 { font-size: 28px; }
+  .hero-actions { flex-direction: column; a { width: 100%; } }
+}

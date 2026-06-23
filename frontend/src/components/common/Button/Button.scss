@@ -1,0 +1,24 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.button {
+  border: 0;
+  border-radius: $radius-sm;
+  padding: 11px 18px;
+  color: $white;
+  background: $primary-color;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.button--danger {
+  background: $danger-color;
+}
+
+.button--success {
+  background: $success-color;
+}

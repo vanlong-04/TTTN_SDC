@@ -1,0 +1,8 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.card {
+  border-radius: $radius-lg;
+  padding: 28px;
+  background: $white;
+  box-shadow: $shadow-card;
+}
